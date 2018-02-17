@@ -7,6 +7,7 @@ public class numberSorter {
 
 		int [] bubbleList = bubbleSort(numList);
 		int [] selectList = selectSort(numList);
+		int [] insertList = insertSort(numList);
 		
 		System.out.println("**Bubble Sort**\n");
 		for (int i = 0; i < bubbleList.length; i++) {
@@ -16,6 +17,11 @@ public class numberSorter {
 		System.out.println("\n**Selection Sort**\n");
 		for (int i = 0; i < selectList.length; i++) {
 			System.out.println(selectList[i]);
+		}
+		
+		System.out.println("\n**Insertion Sort**\n");
+		for (int i = 0; i < insertList.length; i++) {
+			System.out.println(insertList[i]);
 		}
 		
 		
@@ -58,6 +64,23 @@ public class numberSorter {
 			}
 		}
 		
+		
+		return array;
+	}
+	
+	public static int [] insertSort(int [] array)	{
+		
+		for (int i = 1; i < array.length; i++) {
+			int temp = array[i];
+			int j = i;
+			
+			while (j > 0 && array[j - 1] > temp) {
+				array[j] = array[j-1];
+				j--;
+			}
+			array[j] = temp;
+			
+		}
 		
 		return array;
 	}
